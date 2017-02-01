@@ -1,0 +1,1819 @@
+/*________1 parents-club page______*/
+
+.parents-club {
+  img {
+    display: block;
+    float: left;
+
+    width: 45%;
+    margin-right: 30px;
+
+    border-radius: 10px;
+  }
+  .section-body {
+    padding: 0 15px;
+  }
+  h3,
+  p:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+}
+
+.block-tittle--lg {
+  padding: 0 15px;
+
+  text-transform: uppercase;
+}
+
+section.calendar {
+  padding-bottom: 0;
+
+  background: url(../img/bg-direction.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.calendar__month {
+  display: inline-block;
+
+  margin: 0 15px 20px;
+  padding: 10px 15px;
+
+  color: #fff;
+  border-radius: 4px;
+}
+
+.calendar__block {
+  margin-bottom: 30px;
+}
+
+.calendar__block-inner {
+  position: relative;
+
+  padding-left: 80px;
+}
+
+.calendar__date {
+  position: absolute;
+  top: 0;
+  left: 0;
+  span {
+    font-size: 60px;
+    line-height: 60px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 20px;
+
+    position: relative;
+    top: -5px;
+  }
+}
+
+.calendar__descr {
+  h4 {
+    font-size: 21px;
+    font-weight: 700;
+
+    margin-bottom: 10px;
+  }
+  p {
+    font-family: LatoLight,sans-serif;
+    line-height: 19px;
+  }
+}
+
+.calendar__month-wrap {
+  &:nth-of-type(2n+1) {
+    .calendar__month {
+      background-color: #e18e1d;
+    }
+    .calendar__date {
+      color: #e18e1d;
+    }
+  }
+  &:nth-of-type(2n+2) {
+    .calendar__month {
+      background-color: #1d9ee1;
+    }
+    .calendar__date {
+      color: #1d9ee1;
+    }
+  }
+}
+
+.helpful-articles__block {
+  position: relative;
+
+  margin-bottom: 45px;
+  a:hover {
+    text-decoration: none;
+    .news-slider__block-text p {
+      color: #e07a1a;
+    }
+  }
+}
+
+.subscribe {
+  color: #fff;
+  background: url(../img/bg-subscribe.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  h1 {
+    font-size: 54px;
+  }
+  p {
+    font-size: 25px;
+  }
+}
+
+.subscribe__block {
+  position: relative;
+}
+
+.subscribe__arrows {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  display: inline-block;
+
+  margin-top: -10px;
+  span {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+
+    border: 1px solid #fff;
+    border-bottom: none;
+    border-left: none;
+  }
+}
+
+.subscribe__arrows-inner {
+  position: relative;
+}
+
+.subscribe__arrows span {
+  &:nth-of-type(2),
+  &:nth-of-type(4) {
+    width: 35px;
+    height: 35px;
+  }
+  &:nth-of-type(3) {
+    top: -6px;
+    right: 25px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 2px solid #fff;
+    border-bottom: none;
+    border-left: none;
+  }
+  &:nth-of-type(2) {
+    top: -3px;
+    right: 12px;
+  }
+  &:nth-of-type(4) {
+    top: -3px;
+    right: 38px;
+  }
+  &:nth-of-type(5) {
+    right: 50px;
+  }
+}
+
+.subscribe__block--tittle {
+  padding-right: 75px;
+}
+
+/*________ 2 studios page______*/
+
+.studios-nav {
+  position: relative;
+
+  padding: 13px;
+
+  color: #fff;
+  border: 2px solid #eb6735;
+  border-radius: 10px;
+  background: -webkit-linear-gradient(to top right, #fcbe9f 0%, #f89863 40%);
+  background:    -moz-linear-gradient(to top right, #fcbe9f 0%, #f89863 40%);
+  background:     -ms-linear-gradient(to top right, #fcbe9f 0%, #f89863 40%);
+  background:      -o-linear-gradient(to top right, #fcbe9f 0%, #f89863 40%);
+  background:         linear-gradient(to top right, #fcbe9f 0%, #f89863 40%);
+  &:before {
+    position: absolute;
+    z-index: -1;
+    bottom: 1px;
+    left: 3px;
+
+    display: inline-block;
+
+    width: 80%;
+    height: 0;
+
+    content: '';
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+         -o-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+
+    box-shadow: 0 0 5px 3px #ccc;
+  }
+  &:after {
+    position: absolute;
+    z-index: -1;
+    top: 30px;
+    right: -3px;
+
+    display: inline-block;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+    -webkit-transform: rotate(116deg);
+       -moz-transform: rotate(116deg);
+        -ms-transform: rotate(116deg);
+         -o-transform: rotate(116deg);
+            transform: rotate(116deg);
+
+    border: 20px solid #eb6735;
+    border-top-color: transparent;
+    border-right: none;
+    border-bottom-color: transparent;
+  }
+}
+
+.studios-nav--inner {
+  padding: 17px 10px;
+
+  border: 2px dashed rgba(255, 255, 255, .7);
+}
+
+.studios-nav__tittle {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+
+  border-bottom: 2px dotted #fff;
+}
+
+.studios-nav__block {
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+    border-bottom: 2px dotted #fff;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+.studios-main__img {
+  overflow: hidden;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+  img {
+    height: 100%;
+  }
+}
+
+.studios-main__descr-top {
+  margin-bottom: 20px;
+  h1 {
+    line-height: 40px;
+
+    display: inline-block;
+
+    color: #e18b1c;
+  }
+  .btn-yellow {
+    float: right;
+  }
+}
+
+.studios-main__descr-text {
+  line-height: 19px;
+
+  margin-bottom: 20px;
+}
+
+.studios-main__descr-bot {
+  span {
+    font-size: 25px;
+
+    position: relative;
+
+    display: inline-block;
+
+    margin-right: 40px;
+    padding-left: 48px;
+  }
+  i {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    &.ic-bell {
+      top: -15px;
+
+      -webkit-transform: scale(.6);
+         -moz-transform: scale(.6);
+          -ms-transform: scale(.6);
+           -o-transform: scale(.6);
+              transform: scale(.7);
+    }
+    &.ic-school_bell {
+      top: -15px;
+
+      -webkit-transform: scale(.6);
+         -moz-transform: scale(.6);
+          -ms-transform: scale(.6);
+           -o-transform: scale(.6);
+              transform: scale(.6);
+    }
+  }
+}
+
+.studios-main__block {
+  margin-bottom: 60px;
+}
+
+.studios-main__descr-top--img {
+  display: none;
+}
+
+/*________ 3 contacts page______*/
+
+#map {
+  height: 500px;
+  margin-bottom: 45px;
+}
+
+.contacts-left__block {
+  position: relative;
+
+  margin-bottom: 20px;
+  padding-left: 40px;
+  p {
+    font-family: LatoLight,sans-serif;
+    font-size: 21px;
+    line-height: 33px;
+    small {
+      font-family: LatoLight,sans-serif;
+      font-size: 21px;
+    }
+    span {
+      font-size: 33px;
+    }
+  }
+  i {
+    position: absolute;
+    top: 0;
+    left: 0;
+    &.ic-c_phones,
+    &.ic-c_mail {
+      top: 5px;
+    }
+  }
+}
+
+.contacts-right-wrap {
+  padding: 0;
+}
+
+/*________ 4 about_us page______*/
+
+.advantages {
+  padding-top: 0;
+}
+
+.advantages-block {
+  float: left;
+
+  width: 20%;
+  padding: 0 10px;
+
+  text-align: center;
+}
+
+.advantages-block__img {
+  min-height: 115px;
+  img {
+    display: inline-block;
+  }
+}
+
+.advantages-block__text {
+  h4 {
+    font-size: 21px;
+
+    margin-bottom: 5px;
+  }
+  p {
+    font-family: LatoRegular,sans-serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 17px;
+
+    opacity: .69;
+  }
+}
+
+section.press {
+  background: url(../img/bg-direction.jpg) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.press-block {
+  margin: 0 15px;
+}
+
+.press-block__img {
+  line-height: 105px;
+
+  overflow: hidden;
+
+  height: 105px;
+
+  text-align: center;
+
+  border-radius: 10px;
+  background: #fff;
+  img {
+    display: inline-block;
+  }
+}
+
+.press-block__text {
+  line-height: 19px;
+
+  padding: 5px;
+
+  text-align: center;
+
+  color: #000;
+}
+
+.press-block__bot span {
+  font-family: LatoRegular,sans-serif;
+  font-weight: 700;
+
+  color: #0e9fc1;
+  &.right {
+    float: right;
+  }
+}
+
+.press-block:hover {
+  a {
+    text-decoration: none;
+  }
+  .press-block__text {
+    color: #0e9fc1;
+  }
+}
+
+.ic-quotes {
+  margin-right: 5px;
+}
+
+.ic-quotes--rotate {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+.press-slider {
+  .slick-prev,
+  .slick-next {
+    width: 16px;
+    height: 26px;
+
+    background: url(../img/sprites.png) no-repeat;
+  }
+  .slick-prev {
+    background-position: -271px -69px;
+  }
+  .slick-next {
+    background-position: -287px -69px;
+  }
+}
+
+.comments-slider__name-wrap,
+.comments-slider__img-wrap,
+.comments-slider__progress-wrap {
+  float: left;
+
+  width: 33.3%;
+}
+
+.comments-slider__img-wrap {
+  text-align: center;
+}
+
+.comments-slider__name-wrap {
+  padding-top: 70px;
+
+  text-align: right;
+}
+
+.comments-slider__progress-wrap {
+  font-size: 25px;
+
+  padding-top: 50px;
+}
+
+.comments-slider__img {
+  display: inline-block;
+  overflow: hidden;
+
+  width: 230px;
+  height: 230px;
+
+  border-radius: 50%;
+}
+
+.comments-slider__name {
+  h1 {
+    font-size: 42px;
+
+    color: #e78239;
+  }
+  p {
+    font-size: 21px;
+  }
+}
+
+.comments-slider__progress {
+  h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+  }
+  p {
+    line-height: 27px;
+
+    color: #e17425;
+    i {
+      top: 5px;
+
+      margin-right: 15px;
+    }
+  }
+}
+
+.comments-slider__text {
+  position: relative;
+
+  padding: 0 40px;
+
+  text-align: center;
+  p:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+  i.ic-grey_quotes {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    &.rotate {
+      position: absolute;
+      top: auto;
+      right: 5px;
+      bottom: 0;
+      left: auto;
+    }
+  }
+}
+
+.comments-slider {
+  .slick-prev,
+  .slick-next {
+    top: 110px;
+
+    width: 23px;
+    height: 37px;
+
+    background: url(../img/sprites.png) no-repeat;
+  }
+  .slick-prev {
+    left: 36%;
+
+    background-position: -549px -78px;
+  }
+  .slick-next {
+    right: 36%;
+
+    background-position: -572px -78px;
+  }
+}
+
+/*________ 5 sad page______*/
+
+section.kindergarten {
+  padding-bottom: 0;
+}
+
+.kindergarten-slider-nav--wrapper {
+  position: relative;
+
+  padding: 0;
+
+  background: url(../img/soc-btn.jpg);
+}
+
+.kindergarten-slider-nav {
+  .slick-prev::before,
+  .slick-next::before {
+    font-family: NeuchaRegular,sans-serif;
+    font-size: 23px;
+
+    text-transform: uppercase;
+
+    opacity: .35;
+    color: #000;
+  }
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+
+    width: auto;
+    padding: 0 35px;
+  }
+  .slick-prev {
+    left: 25%;
+  }
+  .slick-next {
+    right: 25%;
+  }
+  .slick-prev::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    background: url(../img/btn-slider.png) no-repeat;
+    background-size: cover;
+  }
+  .slick-next::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+
+    background: url(../img/btn-slider.png) no-repeat;
+    background-size: cover;
+  }
+  .slick-prev::before {
+    content: '╨Ь╨Ы╨Р╨Ф╨и╨Х';
+  }
+  .slick-next::before {
+    content: '╨б╤В╨░╤А╤И╨╡';
+  }
+}
+
+.kindergarten-slider-nav--wrapper {
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 5px;
+
+    content: '';
+
+    background: url(../img/border.png);
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+}
+
+.kindergarten-slider-nav__block {
+  position: relative;
+
+  margin: 0 50px 30px;
+  padding: 30px 5px 5px;
+
+  cursor: pointer;
+  text-align: center;
+
+  border: 2px solid transparent;
+  border-radius: 10px;
+  &.slick-current {
+    top: 35px;
+
+    border: 2px solid #fe6500;
+    border-top-color: transparent;
+    .kindergarten-slider-nav__img {
+      position: absolute;
+      top: -20px;
+      left: 25%;
+
+      width: 50%;
+
+      -webkit-transform: scale(1.2);
+         -moz-transform: scale(1.2);
+          -ms-transform: scale(1.2);
+           -o-transform: scale(1.2);
+              transform: scale(1.2);
+    }
+    &:before,
+    &:after {
+      position: absolute;
+      top: -2px;
+
+      display: inline-block;
+
+      width: 25%;
+      height: 30px;
+
+      content: '';
+
+      border: 2px solid #fe6500;
+      border-bottom: none;
+    }
+    &:before {
+      left: -2px;
+
+      border-right: none;
+      border-radius: 10px 0 0 0;
+    }
+    &:after {
+      right: -2px;
+
+      border-left: none;
+      border-radius: 0 10px 0 0;
+    }
+    p:before {
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+
+      display: inline-block;
+
+      width: 0;
+      height: 0;
+      margin-left: -7.5px;
+
+      content: '';
+
+      border: 15px solid #fe6500;
+      border-right-color: transparent;
+      border-bottom: none;
+      border-left-color: transparent;
+    }
+  }
+}
+
+.kindergarten-slider-nav__img {
+  display: inline-block;
+
+  width: 50px;
+  height: 45px;
+  img {
+    display: inline-block;
+
+    height: 100%;
+  }
+}
+
+.kindergarten-slider-nav__name {
+  font-family: LatoRegular,sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.band-teacher__top {
+  display: table;
+
+  margin-bottom: 20px;
+}
+
+.band-teacher__img {
+  display: table-cell;
+  overflow: hidden;
+  img {
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+  }
+}
+
+.band-teacher__name {
+  display: table-cell;
+
+  padding-left: 30px;
+
+  vertical-align: middle;
+  h2 {
+    margin-bottom: 10px;
+
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 21px;
+    line-height: 22px;
+
+    width: 165px;
+
+    color: #df6515;
+  }
+}
+
+.band-teacher__text p:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.kindergarten-slider__block--right h2 {
+  margin-bottom: 15px;
+}
+
+.nav-tabs--kindergarten {
+  border: none;
+  h3 {
+    line-height: 52px;
+
+    display: inline-block;
+
+    height: 52px;
+    margin-bottom: 15px;
+    padding: 0 20px;
+
+    color: #fff;
+    border-radius: 8px;
+  }
+  .teachers-tittle {
+    background-color: #6bbedd;
+  }
+  .helpers-tittle {
+    background-color: #74b885;
+  }
+  > li {
+    &.active > a {
+      cursor: default;
+
+      color: #df6515;
+      border: none;
+      background-color: #fff;
+      &:hover,
+      &:focus {
+        cursor: default;
+
+        color: #df6515;
+        border: none;
+        background-color: #fff;
+      }
+    }
+    > a {
+      font-size: 21px;
+
+      width: 135px;
+      margin-right: 0;
+      margin-bottom: 10px;
+      padding: 10px;
+
+      text-align: center;
+
+      color: #000;
+      border: none;
+      border-radius: 0;
+    }
+  }
+  img {
+    width: 100%;
+
+    border-radius: 50%;
+  }
+}
+
+section.kindergarten-shedule {
+  background: url(../img/bg-direction.jpg) no-repeat;
+  background-size: cover;
+}
+
+.kindergarten-shedule {
+  padding: 35px 0;
+}
+
+.kindergarten-shedule-left__block {
+  position: relative;
+
+  margin-bottom: 25px;
+  padding-left: 100px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 80px;
+  }
+  h3 {
+    margin-bottom: 5px;
+  }
+  p {
+    line-height: 19px;
+  }
+}
+
+.kindergarten-shedule-right__block p {
+  line-height: 19px;
+}
+
+.kindergarten-shedule .block-tittle--lg {
+  padding: 0;
+}
+
+.kindergarten-shedule-right__block {
+  display: table;
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 39px;
+
+    display: table-cell;
+
+    width: 128px;
+
+    text-align: right;
+    vertical-align: top;
+
+    color: #df6515;
+  }
+  p {
+    display: table-cell;
+
+    padding-left: 20px;
+
+    vertical-align: top;
+  }
+}
+
+.kindergarten-longer {
+  padding: 50px 0;
+
+  background-color: rgba(107, 190, 221, .28);
+  p {
+    line-height: 19px;
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.section-tittle i.ic-bell_lg {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+
+  margin-left: -40px;
+}
+
+.kindergarten-longer__block {
+  position: relative;
+
+  float: left;
+
+  width: 33%;
+  padding: 0 10px;
+
+  text-align: center;
+  h1 {
+    font-size: 58px;
+
+    margin-bottom: 10px;
+
+    color: #f29512;
+  }
+  i {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+  }
+}
+
+.kindergarten-studios__type span {
+  position: relative;
+  top: 5px;
+
+  display: inline-block;
+
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+
+  border-radius: 4px;
+  &.yellow {
+    background-color: #fed847;
+  }
+  &.green {
+    background-color: #87ff2e;
+  }
+}
+
+.kindergarten-studios__block {
+  position: relative;
+
+  float: left;
+
+  width: 14.28%;
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+.kindergarten-studios__img {
+  display: inline-block;
+  overflow: hidden;
+
+  width: 130px;
+  height: 130px;
+  margin-bottom: 5px;
+
+  border-radius: 50%;
+  img {
+    height: 130%;
+  }
+}
+
+.kindergarten-studios__block {
+  h3 {
+    color: #000;
+  }
+  h4 {
+    position: absolute;
+    top: -5px;
+    right: 0;
+
+    display: inline-block;
+
+    padding: 5px 15px;
+
+    color: #000;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .34);
+  }
+  &.yellow h4 {
+    background-color: #fed847;
+  }
+  &.green h4 {
+    background-color: #87ff2e;
+  }
+  &:hover a {
+    text-decoration: none;
+  }
+  &.yellow:hover h3 {
+    color: #fed847;
+  }
+  &.green:hover h3 {
+    color: #87ff2e;
+  }
+}
+
+.kindergarten-studios-more {
+  background: url(../img/soc-btn.jpg);
+  p {
+    font-family: LatoLight,sans-serif;
+    font-size: 21px;
+    line-height: 55px;
+  }
+}
+
+section.kindergarten-gallery-wrap {
+  background: url(../img/bg-direction.jpg) no-repeat;
+  background-size: cover;
+}
+
+.kindergarten-gallery__block {
+  overflow: hidden;
+
+  height: 150px;
+  margin: 0 5px;
+  img {
+    height: 100%;
+  }
+}
+
+.kindergarten-gallery {
+  padding: 0 10px;
+}
+
+.arrows-orange {
+  .slick-prev,
+  .slick-next {
+    width: 16px;
+    height: 26px;
+
+    background: url(../img/sprites.png) no-repeat;
+  }
+  .slick-prev {
+    background-position: -217px -69px;
+  }
+  .slick-next {
+    background-position: -233px -69px;
+  }
+}
+
+.kindergarten-video__block {
+  margin: 0 15px;
+}
+
+.kindergarten-video__bg {
+  position: relative;
+
+  float: left;
+  overflow: hidden;
+
+  width: 50%;
+  height: 250px;
+  margin-right: 20px;
+  img {
+    height: 100%;
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: -22.5px;
+    margin-left: -22.5px;
+
+    -webkit-transition: .4s;
+       -moz-transition: .4s;
+        -ms-transition: .4s;
+         -o-transition: .4s;
+            transition: .4s;
+  }
+  &:hover i {
+    -webkit-transform: scale(1.2);
+       -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+         -o-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+.kindergarten-video__descr {
+  p {
+    line-height: 19px;
+
+    margin: 10px 0;
+  }
+  span {
+    font-size: 21px;
+
+    color: #df6515;
+  }
+}
+
+.kindergarten-gallery {
+  display: none;
+}
+
+/*_________________MEDIA__________________*/
+@media screen and (max-width: 1200px) {
+  .subscribe {
+    h1 {
+      font-size: 42px;
+    }
+    p {
+      font-size: 22px;
+    }
+  }
+
+  .subscribe-form {
+    padding-top: 13px;
+  }
+
+  .studios-nav-wrap {
+    padding: 0;
+  }
+
+  .studios-nav h3 {
+    font-size: 22px;
+  }
+
+  .studios-main__descr {
+    padding-left: 35px;
+  }
+
+  .studios-main__descr-bot span {
+    font-size: 20px;
+
+    margin-right: 20px;
+  }
+
+  .press-block__img img {
+    width: 100%;
+  }
+
+  .comments-slider {
+    .slick-prev {
+      left: 35%;
+    }
+    .slick-next {
+      right: 35%;
+    }
+  }
+
+  .kindergarten-slider-nav {
+    .slick-prev {
+      left: 27%;
+
+      padding-right: 0;
+    }
+    .slick-next {
+      right: 27%;
+
+      padding-left: 0;
+    }
+  }
+
+  .kindergarten-longer__block h1 {
+    font-size: 40px;
+  }
+
+  .kindergarten-studios-more p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .parents-club img {
+    margin-bottom: 20px;
+  }
+
+  .subscribe__block--tittle {
+    padding-left: 75px;
+
+    text-align: center;
+  }
+
+  .subscribe-form {
+    padding-top: 15px;
+  }
+
+  .studios-nav-wrap {
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+
+  .studios-nav {
+    &::after {
+      top: 100%;
+      right: 50%;
+
+      margin-right: -20px;
+
+      -webkit-transform: rotate(0deg);
+         -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+           -o-transform: rotate(0deg);
+              transform: rotate(0deg);
+
+      border: 20px solid #eb6735;
+      border-right-color: transparent;
+      border-bottom: none;
+      border-left-color: transparent;
+    }
+    &::before {
+      -webkit-transform: rotate(-1deg);
+         -moz-transform: rotate(-1deg);
+          -ms-transform: rotate(-1deg);
+           -o-transform: rotate(-1deg);
+              transform: rotate(-1deg);
+
+      box-shadow: 0 0 7px 3px #ccc;
+    }
+  }
+
+  .studios-nav__block {
+    display: inline-block;
+
+    width: 49%;
+    padding-bottom: 17px;
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+      padding-bottom: 17px;
+
+      border-bottom: none;
+    }
+  }
+
+  .studios-nav--inner {
+    padding-bottom: 0;
+  }
+
+  .contacts-left__block {
+    display: inline-block;
+
+    margin-right: 30px;
+
+    vertical-align: top;
+    &:first-of-type {
+      float: left;
+    }
+  }
+
+  .advantages-block {
+    overflow: hidden;
+
+    width: 33.3%;
+    height: 220px;
+    margin-bottom: 10px;
+  }
+
+  .comments-slider__name-wrap,
+  .comments-slider__img-wrap,
+  .comments-slider__progress-wrap {
+    float: none;
+
+    width: 100%;
+    padding-top: 0;
+
+    text-align: center;
+  }
+
+  .comments-slider__top {
+    margin-bottom: 15px;
+  }
+
+  .comments-slider {
+    .slick-prev {
+      left: 25%;
+    }
+    .slick-next {
+      right: 25%;
+    }
+    .slick-prev,
+    .slick-next {
+      top: 29%;
+    }
+  }
+
+  .kindergarten-slider-nav__block {
+    margin: 0 30px 30px;
+  }
+
+  .kindergarten-slider-nav {
+    .slick-prev::before,
+    .slick-next::before {
+      display: none;
+    }
+    .slick-prev {
+      left: 33%;
+    }
+    .slick-next {
+      right: 33%;
+    }
+  }
+
+  .band-teacher__text p:not(:last-of-type),
+  .kindergarten-longer p:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+
+  .kindergarten-slider__block--left,
+  .kindergarten-shedule-left {
+    margin-bottom: 30px;
+  }
+
+  .kindergarten-shedule .block-tittle--lg {
+    margin-bottom: 10px;
+  }
+
+  .kindergarten-longer p:last-of-type {
+    margin-bottom: 30px;
+  }
+
+  .kindergarten-studios__block {
+    width: 25%;
+  }
+
+  .kindergarten-studios-more {
+    padding-bottom: 20px;
+    p {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .parents-club {
+    img,
+    h3 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .calendar__block,
+  .calendar__month,
+  .calendar__month-wrap {
+    margin-bottom: 10px;
+  }
+
+  .parents-club p:not(:last-of-type) {
+    margin-bottom: 5px;
+
+    text-align: justify;
+  }
+
+  .calendar__block-inner {
+    padding-left: 70px;
+  }
+
+  .calendar__descr h4 {
+    margin-bottom: 3px;
+  }
+
+  .helpful-articles__block {
+    margin-bottom: 25px;
+  }
+
+  .btn-more {
+    font-size: 16px;
+
+    padding: 0 10px;
+  }
+
+  .subscribe__block--tittle {
+    padding-left: 15px;
+  }
+
+  .subscribe {
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .subscribe__arrows {
+    right: 10px;
+  }
+
+  .subscribe-form {
+    .form-group {
+      margin-bottom: 10px;
+      padding: 0;
+    }
+    .form-control {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .studios-main__img-wrap {
+    margin-bottom: 10px;
+  }
+
+  .studios-main-wrap,
+  .studios-main__descr {
+    padding: 0;
+  }
+
+  .studios-main__descr-text {
+    margin-bottom: 10px;
+  }
+
+  .btn-yellow {
+    line-height: 36px;
+
+    height: 36px;
+  }
+
+  .studios-main__img {
+    width: 100%;
+
+    border-radius: 10px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .studios-main__block {
+    margin-bottom: 35px;
+  }
+
+  .studios-main__descr-bot i {
+    &.ic-bell {
+      left: -5px;
+    }
+    &.ic-school_bell {
+      left: -8px;
+    }
+  }
+
+  .studios-main__descr-top--img {
+    display: block;
+
+    margin-bottom: 5px;
+  }
+
+  .studios-main__descr .studios-main__descr-top {
+    display: none;
+  }
+
+  .studios-main__block {
+    border-bottom: 2px dashed #e18b1c;
+  }
+
+  #map {
+    height: 300px;
+    margin-bottom: 15px;
+  }
+
+  .contacts-left__block {
+    margin-right: 0;
+    margin-bottom: 10px;
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      span {
+        font-size: 24px;
+      }
+      small {
+        font-size: 18px;
+      }
+    }
+    i {
+      -webkit-transform: scale(.8);
+         -moz-transform: scale(.8);
+          -ms-transform: scale(.8);
+           -o-transform: scale(.8);
+              transform: scale(.8);
+      &.ic-c_phones,
+      &.ic-c_mail {
+        top: 0;
+      }
+    }
+  }
+
+  .contacts-left-wrap {
+    margin-bottom: 10px;
+  }
+
+  .contacts-right .block-tittle {
+    margin-bottom: 5px;
+  }
+
+  .advantages-block {
+    width: 50%;
+  }
+
+  .press-slider {
+    margin: 0;
+    .slick-prev {
+      top: -30px;
+      right: 45px;
+      left: auto;
+    }
+    .slick-next {
+      top: -30px;
+      right: 15px;
+    }
+  }
+
+  .comments-slider__text p:not(:last-of-type) {
+    margin-bottom: 5px;
+  }
+
+  .comments-slider {
+    .slick-prev,
+    .slick-next {
+      top: 190px;
+    }
+    .slick-prev {
+      left: 10px;
+    }
+    .slick-next {
+      right: 10px;
+    }
+  }
+
+  .comments-slider__text {
+    padding: 0 15px;
+
+    text-align: justify;
+    i.ic-grey_quotes {
+      opacity: .3;
+    }
+  }
+
+  .kindergarten-slider-nav {
+    .slick-prev {
+      left: 15px;
+    }
+    .slick-next {
+      right: 15px;
+    }
+  }
+
+  .band-teacher__img img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .band-teacher__name {
+    padding-left: 15px;
+  }
+
+  .band-teacher__text p {
+    line-height: 17px;
+
+    text-align: justify;
+    &:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .nav-tabs--kindergarten h3 {
+    margin-bottom: 5px;
+  }
+
+  .kindergarten-slider--wrap h2 {
+    font-size: 22px;
+  }
+
+  .nav-tabs--kindergarten > li > a {
+    font-size: 17px;
+  }
+
+  .kindergarten-longer p {
+    text-align: justify;
+  }
+
+  .kindergarten-longer__block {
+    width: 100%;
+
+    text-align: center;
+    p {
+      display: inline-block;
+
+      width: 200px;
+      margin-bottom: 15px !important;
+
+      text-align: center;
+    }
+    i {
+      display: none;
+    }
+    h1 {
+      margin: 0;
+    }
+  }
+
+  .kindergarten-studios__block {
+    width: 50%;
+    h4 {
+      right: 10px;
+    }
+  }
+
+  .kindergarten-studios-more {
+    padding-top: 20px;
+    p {
+      line-height: 20px;
+
+      margin-bottom: 15px;
+    }
+  }
+
+  .arrows-orange {
+    .slick-prev,
+    .slick-next {
+      top: -30px;
+      right: 15px;
+    }
+    .slick-prev {
+      right: 45px;
+      left: auto;
+    }
+  }
+
+  .kindergarten-shedule-right__block {
+    h2 {
+      font-size: 20px;
+      line-height: 26px;
+
+      width: 55px;
+
+      text-align: left;
+    }
+    p {
+      padding-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .parents-club img {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .studios-nav__block {
+    width: 100%;
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      border-bottom: 2px dotted #fff;
+    }
+  }
+
+  .studios-main__block,
+  .studios-main__descr-bot span {
+    margin-bottom: 20px;
+  }
+
+  .studios-main__descr-text {
+    text-align: justify;
+  }
+
+  .studios-main__descr-top {
+    h1 {
+      display: block;
+    }
+    .btn-yellow {
+      float: none;
+    }
+  }
+
+  .advantages-block {
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    padding: 0 15px;
+  }
+
+  .press-block__img {
+    height: auto;
+  }
+
+  #select-gallery {
+    top: auto;
+
+    display: block;
+
+    width: 70%;
+    margin-top: 10px;
+  }
+
+  .kindergarten-video__bg {
+    width: 100%;
+    height: 190px;
+    margin: 0 0 10px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
