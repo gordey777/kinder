@@ -106,87 +106,63 @@
       </div>
     </section><!-- end section.metods -->
 
-    <section class="teachers">
-      <div class="container">
-        <div class="row">
-          <div class="section-tittle">
-            <h1>НАШИ ВОСПИТАТЕЛИ
-              <div class="section-tittle__decoration"><span></span></div>
-              <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
-            </h1>
-          </div>
-          <!-- end section-tittle -->
-          <div class="teachers-body">
-            <div class="col-md-8 teachers-slider-nav-wrap">
-              <div class="teachers-slider-nav">
-                <div class="teachers-slider-nav__block orange">
-                  <div class="teachers-slider-nav__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/teacher-img1.png" alt="teacher">
-                  </div>
-                  <h3 class="teachers-slider-nav__name">Алеся Махильчик</h3>
-                </div>
-                <!-- end teachers-slider-nav__block -->
-                <div class="teachers-slider-nav__block blue">
-                  <div class="teachers-slider-nav__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/teacher-img2.png" alt="teacher">
-                  </div>
-                  <h3 class="teachers-slider-nav__name">Александра Киман</h3>
-                </div>
-                <!-- end teachers-slider-nav__block -->
-                <div class="teachers-slider-nav__block green">
-                  <div class="teachers-slider-nav__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/teacher-img3.png" alt="teacher">
-                  </div>
-                  <h3 class="teachers-slider-nav__name">Мария Островец</h3>
-                </div>
-                <!-- end teachers-slider-nav__block -->
-                <div class="teachers-slider-nav__block orange">
-                  <div class="teachers-slider-nav__img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/teacher-img1.png" alt="teacher">
-                  </div>
-                  <h3 class="teachers-slider-nav__name">Алеся Махильчик</h3>
-                </div>
-                <!-- end teachers-slider-nav__block -->
-              </div>
+
+    <?php if( have_rows('educator', 5 ) ): ?>
+
+      <section class="teachers">
+        <div class="container">
+          <div class="row">
+            <div class="section-tittle">
+              <h1>НАШИ ВОСПИТАТЕЛИ
+                <div class="section-tittle__decoration"><span></span></div>
+                <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+              </h1>
             </div>
-            <!-- end teachers-slider-nav-wrap -->
-            <div class="col-md-4 teachers-slider-wrap">
-              <div class="teachers-slider">
-                <div class="teachers-slider__block orange">
-                  <h1>Алеся Махильчик</h1>
-                  <h5>учитель математики</h5>
-                  <p class="lato-i">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet,</p>
+            <!-- end section-tittle -->
+            <div class="teachers-body">
+              <div class="col-md-8 teachers-slider-nav-wrap">
+                <div class="teachers-slider-nav">
+
+                  <?php while ( have_rows('educator', 5 ) ) : the_row(); ?>
+
+                    <div class="teachers-slider-nav__block <?php the_sub_field('color'); ?>">
+                      <div class="teachers-slider-nav__img">
+
+                      <?php $image = get_sub_field('img');
+                        if( !empty($image) ): ?>
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                        <?php endif; ?>
+                      </div>
+                      <h3 class="teachers-slider-nav__name"><?php the_sub_field('name'); ?></h3>
+                    </div><!-- end teachers-slider-nav__block -->
+
+                  <?php  endwhile; ?>
+
                 </div>
-                <!-- end teachers-slider__block -->
-                <div class="teachers-slider__block blue">
-                  <h1>Александра Киман</h1>
-                  <h5>учитель русского языка</h5>
-                  <p class="lato-i">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet,</p>
-                </div>
-                <!-- end teachers-slider__block -->
-                <div class="teachers-slider__block green">
-                  <h1>Мария Островец</h1>
-                  <h5>учитель литературы</h5>
-                  <p class="lato-i">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet,</p>
-                </div>
-                <!-- end teachers-slider__block -->
-                <div class="teachers-slider__block orange">
-                  <h1>Александра Киман</h1>
-                  <h5>учитель математики</h5>
-                  <p class="lato-i">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim. Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet,</p>
-                </div>
-                <!-- end teachers-slider__block -->
-              </div>
-              <!-- end teachers-slider -->
-            </div>
-            <!-- end teachers-slider-wrap -->
-            <div class="clearfix"></div>
+              </div><!-- end teachers-slider-nav-wrap -->
+
+              <div class="col-md-4 teachers-slider-wrap">
+                <div class="teachers-slider">
+
+                  <?php while ( have_rows('educator', 5 ) ) : the_row(); ?>
+
+                    <div class="teachers-slider__block <?php the_sub_field('color'); ?>">
+                      <h1><?php the_sub_field('name'); ?></h1>
+                      <h5><?php the_sub_field('specialty'); ?></h5>
+                      <p class="lato-i"><?php the_sub_field('info'); ?></p>
+                    </div><!-- end teachers-slider__block -->
+
+                  <?php  endwhile; ?>
+
+                </div><!-- end teachers-slider -->
+              </div><!-- end teachers-slider-wrap -->
+              <div class="clearfix"></div>
+            </div><!-- end teachers-body -->
           </div>
-          <!-- end teachers-body -->
         </div>
-      </div>
-    </section>
-    <!-- end section.teachers -->
+      </section><!-- end section.teachers -->
+    <?php endif; ?>
+
     <section class="news">
       <div class="container">
         <div class="row">
