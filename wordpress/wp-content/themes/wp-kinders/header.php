@@ -11,6 +11,7 @@
 
   <!-- icons -->
   <link href="<?php echo get_template_directory_uri(); ?>/favicon.ico" rel="shortcut icon">
+  <link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css" rel="stylesheet">
 
   <!--[if lt IE 9]>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -19,6 +20,7 @@
   <![endif]-->
   <!-- css + javascript -->
   <?php wp_head(); ?>
+
 </head>
 <body <?php body_class(); ?>>
 
@@ -71,13 +73,7 @@
             </div>
             <!-- end hamburger -->
             <ul class="h-menu__list">
-              <li><a href="/" class="active">ГЛАВНАЯ</a></li>
-              <li><a href="#">О НАС</a></li>
-              <li><a href="#">САД</a></li>
-              <li><a href="#">ШКОЛА</a></li>
-              <li><a href="#">СТУДИИ ПО ИНТЕРЕСАМ</a></li>
-              <li><a href="#">РОДИТЕЛЬСКИЙ КЛУБ</a></li>
-              <li><a href="#">КОНТАКТЫ</a></li>
+<?php wpeHeadNav(); ?>
               <div class="clearfix"></div>
               <div class="h-menu__icon">
                 <div class="h-menu__icon-inner">
@@ -95,8 +91,3 @@
         </div>
       </div>
       <!-- end container -->
-
-
-
-        <?php wpeHeadNav(); ?>
-

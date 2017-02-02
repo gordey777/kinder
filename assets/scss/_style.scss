@@ -794,9 +794,6 @@ i {
   position: relative;
 
   background: #fbc300;
-  li {
-    float: left;
-  }
   a {
     font-size: 25px;
 
@@ -804,26 +801,150 @@ i {
 
     padding: 16px 25.6px;
 
-    -webkit-transition: .4s;
-       -moz-transition: .4s;
-        -ms-transition: .4s;
-         -o-transition: .4s;
-            transition: .4s;
+    transition: .4s;
     text-transform: uppercase;
 
     color: #fff;
   }
   li {
+    float: left;
+    &.menu-item-has-children {
+      position: relative;
+      &:after {
+        font-size: 22px;
+
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        right: 0;
+
+        display: block;
+
+        width: 10px;
+        height: 10px;
+        //content: '\f107';
+
+        content: '\f010';
+
+        color: #fff;
+      }
+    }
+    &:hover,
+    &.current-menu-item {
+      &:not(:last-of-type) {
+        a {
+          text-decoration: none;
+
+          background: #fa8f00;
+        }
+      }
+      a {
+        text-decoration: none;
+
+        background: #fa8f00;
+      }
+    }
     &:first-of-type a {
       padding-left: 50px;
     }
     &:last-of-type a {
       padding-right: 50px;
     }
+    &:not(:last-of-type) {
+      a {
+        background: linear-gradient(to left, #f1b800 0%, #fbc300 25px);
+        &.active {
+          text-decoration: none;
+
+          background: #fa8f00;
+        }
+        &:hover {
+          text-decoration: none;
+
+          background: #fa8f00;
+        }
+      }
+    }
+    .sub-menu {
+      position: absolute;
+      z-index: -1;
+      top: 65px;
+
+      display: block;
+      visibility: hidden;
+
+      width: 300px;
+      min-width: 100%;
+
+      transition: .7s;
+      text-transform: none;
+
+      opacity: 0;
+      li {
+        width: 100%;
+
+        background: #fa8f00;
+        a {
+          width: 100%;
+          padding: 16px 25.6px 16px 45.6px;
+
+          text-transform: none;
+
+          background: linear-gradient(to left, #f1b800 0%, #fbc300 25px);
+          &.active {
+            text-decoration: none;
+
+            background: #fa8f00;
+          }
+          &:hover {
+            transition: .7s;
+            text-decoration: none;
+
+            background: #fa8f00;
+          }
+        }
+        &:hover,
+        &.current-menu-item {
+          a {
+            text-decoration: none;
+
+            background: #fa8f00;
+          }
+        }
+        &:after {
+          position: absolute;
+          z-index: 1;
+          bottom: 2px;
+          left: 0;
+
+          display: block;
+
+          width: 100%;
+          height: 0;
+
+          content: '';
+
+          border-bottom: 1px dashed #fff;
+        }
+      }
+    }
+    &:hover {
+      .sub-menu {
+        z-index: 2;
+        //display: block;
+
+        visibility: visible;
+
+        transition: .7s;
+
+        opacity: 1;
+      }
+    }
   }
   &:before,
   &:after {
     position: absolute;
+    z-index: 1;
     left: 0;
 
     display: block;
@@ -840,31 +961,6 @@ i {
   }
   &:after {
     bottom: 2px;
-  }
-  li:not(:last-of-type) a {
-    background:    -moz-linear-gradient(to left, #f1b800 0%, #fbc300 25px);
-    background: -webkit-linear-gradient(to left, #f1b800 0%, #fbc300 25px);
-    background:      -o-linear-gradient(to left, #f1b800 0%, #fbc300 25px);
-    background:     -ms-linear-gradient(to left, #f1b800 0%, #fbc300 25px);
-    background:         linear-gradient(to left, #f1b800 0%, #fbc300 25px);
-    &.active {
-      text-decoration: none;
-
-      background: #fa8f00;
-    }
-  }
-  a {
-    &.active,
-    &:hover {
-      text-decoration: none;
-
-      background: #fa8f00;
-    }
-  }
-  li:not(:last-of-type) a:hover {
-    text-decoration: none;
-
-    background: #fa8f00;
   }
 }
 
@@ -1420,6 +1516,7 @@ section.teachers {
   margin-bottom: 15px;
 
   border-radius: 10px;
+  background: #ccc;
   img {
     width: 100%;
   }
@@ -1441,6 +1538,8 @@ section.teachers {
 
     position: relative;
     top: -8px;
+
+    text-transform: capitalize;
   }
 }
 
@@ -1672,6 +1771,8 @@ section.partners .row {
 }
 
 .partners-slider__block {
+  overflow: hidden;
+
   height: 71px;
   margin: 0 10px;
 
@@ -1682,6 +1783,10 @@ section.partners .row {
 
     width: 100%;
     height: 100%;
+    img {
+      width: auto;
+      height: 100%;
+    }
   }
 }
 
@@ -1896,8 +2001,7 @@ section.partners .row {
 
 .hamburger--elastic {
   .hamburger-inner {
-    top: 2px;
-
+    //top: 2px;
     transition-timing-function: cubic-bezier(.68, -.55, .265, 1.55);
     transition-duration: .4s;
     &::before {

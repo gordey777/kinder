@@ -63,49 +63,24 @@
               </h2>
             </div>
             <!-- end block-tittle -->
-            <div class="partners-slider">
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-              <div class="partners-slider__block">
-                <a href="#"></a>
-              </div>
-              <!-- end partners-slider__block -->
-            </div>
-            <!-- end partners__slider -->
+              <div class="partners-slider">
+            <?php if( have_rows('partners' ) ): ?>
+
+                <?php while ( have_rows('partners', 5 ) ) : the_row(); ?>
+
+                  <div class="partners-slider__block">
+                    <a href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('title'); ?>">
+                      <?php $image = get_sub_field('img');
+                      if( !empty($image) ): ?>
+                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                      <?php endif; ?>
+                    </a>
+                  </div><!-- end partners-slider__block -->
+
+                <?php  endwhile; ?>
+
+            <?php endif; ?>
+              </div><!-- end partners__slider -->
           </div>
         </div>
       </section>

@@ -1,19 +1,11 @@
-@import 'import/reset';
-@import 'import/variables';
-@import 'import/buttons';
-@import 'import/forms';
-@import 'import/lists';
-@import 'import/tables';
-@import 'import/mixin';
-@import 'import/wordpress';
-@import 'super_sprite';
-@import 'fonts/font_fontawesome';
-@import 'base64';
-@import 'import/print';
-@import 'bootstrap';
+
+//@import 'bootstrap';
+
+
+@import 'bootstrap-theme';
+
 @import 'slick';
 @import 'slick-theme';
 @import 'style';
 @import 'inner-pages';
-
-
+@import 'fonts/font_fontawesome';
