@@ -1,5 +1,4 @@
 
-    <footer>
       <section class="f-top">
         <div class="container">
           <div class="row">
@@ -16,13 +15,13 @@
                 </div>
                 <div class="clearfix"></div>
               </div>
-            </div>
-            <!-- end f-top__block -->
+            </div><!-- end f-top__block -->
+
             <div class="col-sm-6 col-md-5 f-top__block f-top__block--gallery">
               <h2>Фотогалерея</h2>
               <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/f-img2.jpg" alt="img2"></a>
-            </div>
-            <!-- end f-top__block -->
+            </div><!-- end f-top__block -->
+
             <div class="col-sm-6 col-md-3 f-top__block f-top__block--question">
               <h2>Вопрос-ответ</h2>
               <div class="question-slider-wrap">
@@ -41,50 +40,47 @@
                   <div class="question-slider__block">
                     <h3>Lorem ipsum dolor sit amet.</h3>
                     <p class="lato-i">Lorem ipsum dolor sit amet, consectetur adcing elit Lorem ipsum dolor sit amet, consectetur adip iscing elit psum dolor sit amet. Aenean consectetur fringilla mi in mollis. Etiam eleifend sollicitudin dignissim.</p>
-                  </div>
-                  <!-- end question-slider__block -->
-                </div>
-                <!-- end question-slider -->
-              </div>
-              <!-- end question-slider-wrap -->
-            </div>
-            <!-- end f-top__block -->
+                  </div><!-- end question-slider__block -->
+                </div><!-- end question-slider -->
+              </div><!-- end question-slider-wrap -->
+            </div><!-- end f-top__block -->
             <div class="clearfix"></div>
           </div>
         </div>
-      </section>
-      <!-- end f-top -->
-      <section class="partners">
-        <div class="container">
-          <div class="row">
-            <div class="block-tittle">
-              <h2>Наши партнеры
-                <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
-              </h2>
+      </section><!-- end f-top -->
+
+      <?php if( have_rows('partners', 5 ) ): ?>
+        <section class="partners">
+          <div class="container">
+            <div class="row">
+              <div class="block-tittle">
+                <h2>Наши партнеры
+                  <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                </h2>
+              </div><!-- end block-tittle -->
+
+                <div class="partners-slider">
+
+
+                  <?php while ( have_rows('partners', 5 ) ) : the_row(); ?>
+
+                    <div class="partners-slider__block">
+                      <a href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('title'); ?>">
+                        <?php $image = get_sub_field('img');
+                        if( !empty($image) ): ?>
+                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                        <?php endif; ?>
+                      </a>
+                    </div><!-- end partners-slider__block -->
+
+                  <?php  endwhile; ?>
+
+
+                </div><!-- end partners__slider -->
             </div>
-            <!-- end block-tittle -->
-              <div class="partners-slider">
-            <?php if( have_rows('partners' ) ): ?>
-
-                <?php while ( have_rows('partners', 5 ) ) : the_row(); ?>
-
-                  <div class="partners-slider__block">
-                    <a href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('title'); ?>">
-                      <?php $image = get_sub_field('img');
-                      if( !empty($image) ): ?>
-                        <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                      <?php endif; ?>
-                    </a>
-                  </div><!-- end partners-slider__block -->
-
-                <?php  endwhile; ?>
-
-            <?php endif; ?>
-              </div><!-- end partners__slider -->
           </div>
-        </div>
-      </section>
-      <!-- end section.partners -->
+        </section><!-- end section.partners -->
+      <?php endif; ?>
       <div class="f-bot">
         <div class="container">
           <div class="row">
@@ -120,13 +116,14 @@
       </div>
     </footer>
   </div>
-    <?php wp_footer(); ?>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <?php wp_footer(); ?>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
   <script src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 </body>
 </html>
 

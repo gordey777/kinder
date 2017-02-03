@@ -243,6 +243,6 @@
       </div>
     </section>
     <!-- end section.news -->
-
+    <footer>
 
 <?php get_footer(); ?>
