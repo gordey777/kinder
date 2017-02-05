@@ -20,6 +20,11 @@
       </div><!-- end container -->
     </section><!-- end section.<?php post_class(); ?> -->
 
+  <?php endwhile; else: // If 404 page error ?>
+    <article>
+      <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
+    </article>
+  <?php endif; ?>
 
   <?php if( have_rows('advantages') ): ?>
       <section class="advantages">
@@ -94,7 +99,7 @@
     </section><!-- end section.press -->
   <?php endif; ?>
 
-
+<!-- Вывод отзывов со страницы Отзывы (ID=205) -->
   <?php if( have_rows('review', 205) ): ?>
     <section class="comments">
       <div class="container">
@@ -159,12 +164,6 @@
     </section><!-- end section.comments -->
   <?php endif; ?>
 
-
-  <?php endwhile; else: // If 404 page error ?>
-    <article>
-      <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
-    </article>
-  <?php endif; ?>
 
     <footer>
       <section class="subscribe">
