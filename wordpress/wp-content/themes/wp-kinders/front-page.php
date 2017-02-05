@@ -207,16 +207,14 @@
               <?php endif; ?>
 
             </div>
-          </div>
-          <!-- end news-wrap -->
+          </div><!-- end news-wrap -->
           <div class="col-sm-6 col-md-5 news-socials-wrap">
             <div class="news-socials">
               <div class="block-tittle">
                 <h2>Мы в соц.сетях
                   <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
                 </h2>
-              </div>
-              <!-- end block-tittle -->
+              </div><!-- end block-tittle -->
               <div class="news-socials__buttons">
                 <a href="#" class="news-socials__fb">
                   <i class="ic ic-fb"></i>
@@ -241,8 +239,8 @@
           <div class="clearfix"></div>
         </div>
       </div>
-    </section>
-    <!-- end section.news -->
+    </section><!-- end section.news -->
+
     <footer>
 
 <?php get_footer(); ?>

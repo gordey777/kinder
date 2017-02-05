@@ -665,7 +665,12 @@ function post_is_in_descendant_category( $cats, $_post = null ){
 }
 
 
-
+//удаление тегов параграфа для отдельных картинок start
+function wph_remove_p_images($content){
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+add_filter('the_content', 'wph_remove_p_images');
+//удаление тегов параграфа для отдельных картинок end
 
 
 ?>
