@@ -49,38 +49,41 @@
         </div>
       </section><!-- end f-top -->
 
+<!-- БЛОК ПАРТНЕРЫ -->
       <?php if( have_rows('partners', 5 ) ): ?>
-        <section class="partners">
-          <div class="container">
-            <div class="row">
-              <div class="block-tittle">
-                <h2>Наши партнеры
-                  <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
-                </h2>
-              </div><!-- end block-tittle -->
+          <section class="partners">
+            <div class="container">
+              <div class="row">
+                <div class="block-tittle">
+                  <h2>Наши партнеры
+                    <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                  </h2>
+                </div><!-- end block-tittle -->
 
-                <div class="partners-slider">
-
-
-                  <?php while ( have_rows('partners', 5 ) ) : the_row(); ?>
-
-                    <div class="partners-slider__block">
-                      <a href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('title'); ?>">
-                        <?php $image = get_sub_field('img');
-                        if( !empty($image) ): ?>
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                        <?php endif; ?>
-                      </a>
-                    </div><!-- end partners-slider__block -->
-
-                  <?php  endwhile; ?>
+                  <div class="partners-slider">
 
 
-                </div><!-- end partners__slider -->
+                    <?php while ( have_rows('partners', 5 ) ) : the_row(); ?>
+
+                      <div class="partners-slider__block">
+                        <a href="<?php the_sub_field('link'); ?>" title="<?php the_sub_field('title'); ?>">
+                          <?php $image = get_sub_field('img');
+                          if( !empty($image) ): ?>
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                          <?php endif; ?>
+                        </a>
+                      </div><!-- end partners-slider__block -->
+
+                    <?php  endwhile; ?>
+
+
+                  </div><!-- end partners__slider -->
+              </div>
             </div>
-          </div>
-        </section><!-- end section.partners -->
-      <?php endif; ?>
+          </section><!-- end section.partners -->
+        <?php endif; ?>
+
+
       <div class="f-bot">
         <div class="container">
           <div class="row">
