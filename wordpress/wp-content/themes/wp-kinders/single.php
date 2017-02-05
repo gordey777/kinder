@@ -1,10 +1,12 @@
-<?php get_header(); ?>
+
+  <?php get_header(); ?>
     </header>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
     </header>
     <section class="<?php post_class(); ?>">
       <div class="container">
+      <?php edit_post_link(); ?>
         <div class="row">
           <div class="section-tittle">
             <h1><?php the_title(); ?>
@@ -12,19 +14,28 @@
               <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
             </h1>
           </div><!-- end section-tittle -->
-        </div><?php edit_post_link(); ?>
+        </div>
       </div><!-- end container -->
 
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <?php if ( has_post_thumbnail()) :
-              the_post_thumbnail('large');
-            else: ?>
-              <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
-            <?php endif; ?>
-            <?php the_content(); ?>
-          </div>
+          <?php if ( in_category( 4 ) || post_is_in_descendant_category( 4 ) ) {
+
+          }
+          else { ?>
+
+            <div class="col-md-12 mb-30">
+              <?php if ( has_post_thumbnail()) :
+                the_post_thumbnail('large');
+              else: ?>
+                <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+              <?php endif; ?>
+            </div>
+
+          <?php } ?>
+
+          <?php the_content(); ?>
+
         </div>
       </div>
 
@@ -69,4 +80,5 @@
           </div>
         </div>
       </section><!-- end section.subscribe -->
-<?php get_footer(); ?>
+  <?php get_footer(); ?>
+

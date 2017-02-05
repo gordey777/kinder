@@ -118,12 +118,13 @@
   </div>
   <?php wp_footer(); ?>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
 </body>
 </html>
 

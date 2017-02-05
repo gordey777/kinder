@@ -2316,7 +2316,13 @@ section.partners .row {
       right: 15px;
     }
   }
-
+  .gallery-relative {
+    .img-fluid {
+      height: 70vw;
+      img {
+      }
+    }
+  }
   .h-contacts__block {
     padding-left: 0;
   }
@@ -2873,6 +2879,20 @@ a.simple-img img {
   position: relative;
 
   margin: 0 auto;
+  .img-fluid {
+    overflow: hidden;
+
+    width: 100%;
+    height: 20vw;
+    img {
+      display: block;
+      float: none;
+
+      width: auto;
+      height: 100%;
+      margin: auto;
+    }
+  }
 }
 
 span {
