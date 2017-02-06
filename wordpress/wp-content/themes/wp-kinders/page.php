@@ -2,10 +2,10 @@
     </header>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-    </header>
     <section <?php post_class(); ?>>
       <div class="container">
         <div class="row">
+          <?php edit_post_link(); ?>
           <div class="section-tittle">
             <h1><?php the_title(); ?>
               <div class="section-tittle__decoration"><span></span></div>
@@ -17,7 +17,7 @@
 
 
       <?php the_content(); ?>
-      <?php edit_post_link(); ?>
+
     </section><!-- end section.<?php post_class(); ?> -->
 
 

@@ -672,5 +672,23 @@ function wph_remove_p_images($content){
 add_filter('the_content', 'wph_remove_p_images');
 //удаление тегов параграфа для отдельных картинок end
 
+//Постраничная навигация с асинхронной подгрузкой постов в WordPress
 
+function true_load_posts(){
+  $args = unserialize(stripslashes($_POST['query']));
+  $args['paged'] = $_POST['page'] + 1; // следующая страница
+  $args['post_status'] = 'publish';
+  $q = new WP_Query($args);
+  if( $q->have_posts() ):
+    while($q->have_posts()): $q->the_post();
+      @include 'pagination-ajax.php';
+    endwhile;
+  endif;
+  wp_reset_postdata();
+  die();
+}
+
+
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
 ?>
