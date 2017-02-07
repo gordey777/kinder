@@ -25,7 +25,7 @@
         <div class="row">
           <?php if ( in_category( 4 ) || post_is_in_descendant_category( 4 ) ) { //Если в рубрике Галерея
 
-            $images = get_field('gallery');
+            $images = get_field('single_gallery');
 
             if( $images ): ?>
 

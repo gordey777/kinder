@@ -1,6 +1,6 @@
 <?php /* Template Name: Sad School */ get_header(); ?>
     </header>
-  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
 
 
     <section class="kindergarten">
@@ -57,7 +57,6 @@
 
 
     <section class="kindergarten-slider--wrap">
-
       <div class="container">
         <div class="row">
           <div class="kindergarten-slider">
@@ -82,7 +81,7 @@
                       <?php if ($k == 1){
                         $active_class = ' in active';
                       } ?>
-                      <div class="tab-pane fade <?php echo $active_class; ?>" id="band<?php echo $i; ?>-teacher<?php echo $k; ?>">
+                      <div class="tab-pane fade <?php //echo $active_class; ?>" id="band<?php echo $i; ?>-teacher<?php echo $k; ?>">
                         <div class="band-teacher__top">
                           <div class="band-teacher__img">
 
@@ -132,20 +131,20 @@
                         $active_class2 = 'active';
                       } ?>
 
-                        <li class="<?php //echo $active_class2; ?>">
-                          <a href="#band<?php echo $m; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
-                                  <?php $image = get_sub_field('sub_img');
-                                  if( !empty($image) ): ?>
-                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                  <?php endif; ?>
+                  <li class="<?php //echo $active_class2; ?>">
+                    <a href="#band<?php echo $m; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
+                            <?php $image = get_sub_field('sub_img');
+                            if( !empty($image) ): ?>
+                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <?php endif; ?>
 
-                            <p><?php the_sub_field('sub_name'); ?></p>
-                          </a>
-                        </li>
+                      <p><?php the_sub_field('sub_name'); ?></p>
+                    </a>
+                  </li>
 
                         <?php $n++; ?>
                       <?php endwhile; ?>
-                      <div class="clearfix"></div>
+<div class="clearfix"></div>
                       <?php $m++; ?>
                     <?php  endwhile; ?>
                 </ul>
@@ -157,9 +156,9 @@
 
               <div class="clearfix"></div>
 
-              <?php the_content(); ?>
+<?php the_content(); ?>
 
-              <div class="clearfix"></div>
+ <div class="clearfix"></div>
 
               <section class="kindergarten-studios">
                 <div class="container">
@@ -279,13 +278,13 @@
                         <?php foreach( $posts as $post): ?>
                           <?php setup_postdata($post); ?>
                           <?php $post_id = get_the_ID(); ?>
-                          <?php if ($J == 1){
+                          <?php if ($j == 1){
                             $active_class3 = 'active';
                           } ?>
 
                           <div class="kindergarten-gallery <?php echo $active_class3; ?> kindergarten-gallery<?php echo $j; ?> arrows-orange">
 
-                            <?php $images = get_field('gallery');
+                            <?php $images = get_field('single_gallery');
                               if( $images ): ?>
 
                                 <?php foreach( $images as $image ): ?>
@@ -362,7 +361,7 @@
               </section><!-- end kindergarten-video-wrap -->
             </div><!-- end kindergarten-slider__block -->
 
-<?php endforeach; ?>
+            <?php endforeach; ?>
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div><!-- end kindergarten-slider -->
@@ -370,13 +369,7 @@
       </div>
     </section><!-- end kindergarten-slider--wrap -->
 
-  <?php endwhile; else: // If 404 page error ?>
-    <article>
 
-      <h2 class="page-title inner-title"><?php _e( 'Sorry, nothing to display.', 'wpeasy' ); ?></h2>
-
-    </article>
-  <?php endif; ?>
 
 
     <footer>

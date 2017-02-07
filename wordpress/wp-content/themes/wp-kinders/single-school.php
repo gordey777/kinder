@@ -261,13 +261,13 @@
                         <?php foreach( $posts as $post): ?>
                           <?php setup_postdata($post); ?>
                           <?php $post_id = get_the_ID(); ?>
-                          <?php if ($J == 1){
+                          <?php if ($j == 1){
                             $active_class3 = 'active';
                           } ?>
 
                           <div class="kindergarten-gallery <?php echo $active_class3; ?> kindergarten-gallery<?php echo $j; ?> arrows-orange">
 
-                            <?php $images = get_field('gallery');
+                            <?php $images = get_field('single_gallery');
                               if( $images ): ?>
 
                                 <?php foreach( $images as $image ): ?>
