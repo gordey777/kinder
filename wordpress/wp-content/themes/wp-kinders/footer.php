@@ -125,9 +125,9 @@
 
   <script src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/js/ekko-lightbox.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
+<!--   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script> -->
 </body>
 </html>
 

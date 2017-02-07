@@ -1,6 +1,16 @@
 <?php get_header(); ?>
     </header>
 
+  <?php //Если в категории "Студии по интересах"
+  if ( in_category( 8 ) || post_is_in_descendant_category( 8 ) ) {
+      include 'category-studios.php';
+  }
+  //Если в категории САД или ШКОЛА
+  elseif ( in_category( array( '19', '18' ) ) || post_is_in_descendant_category( array( '19', '18' ) ) ) {
+      include 'category-school.php';
+  }
+  else { ?>
+
     <section class="open-gallery">
       <div class="container">
         <div class="row">
@@ -41,7 +51,7 @@
       </div>
     </section>
 
-
+  <?php } ?>
 
 
     <footer>

@@ -834,7 +834,7 @@ i {
         position: absolute;
         z-index: 1;
         top: 50%;
-        right: 0;
+        right: -5px;
 
         display: block;
 
@@ -842,7 +842,7 @@ i {
         height: 10px;
         //content: '\f107';
 
-        content: '\f010';
+        content: '+';
 
         color: #fff;
       }
