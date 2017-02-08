@@ -57,8 +57,7 @@
 
 
     <section class="kindergarten-slider--wrap">
-      <div class="container">
-        <div class="row">
+
           <div class="kindergarten-slider">
             <?php $posts = get_field('classes');
 
@@ -67,7 +66,8 @@
                 <?php setup_postdata($post); ?>
                           <?php $post_id = get_the_ID(); ?>
             <div class="kindergarten-slider__block">
-
+      <div class="container">
+        <div class="row">
             <?php if( have_rows('comand_group') ): ?>
               <div class="col-md-6 kindergarten-slider__block--left">
 
@@ -162,7 +162,8 @@
 
 
               </div><!-- end kindergarten-slider__block--right -->
-
+        </div>
+      </div>
               <div class="clearfix"></div>
 
 <?php the_content(); ?>
@@ -249,52 +250,59 @@
 
               </section><!-- end kindergarten-studios -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               <section class="kindergarten-gallery-wrap">
-                <div class="container">
+                <div class="container ">
                   <div class="row">
                     <div class="block-tittle block-tittle--nodecor">
-                      <h2>ФОТОГАЛЕРЕЯ
-                        <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
-                      </h2>
+                      <h2>ФОТОГАЛЕРЕЯ<div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div></h2>
 
-                      <?php $posts = get_field('gallery', $post_id);
+                      <?php $posts = get_field('gallery', $post_id); if( $posts ): ?>
 
-                        if( $posts ): ?>
+                          <select name="select-gallery" data-id="<?php echo $post_id; ?>" id="select-gallery-<?php echo $post_id; ?>" class="class-select-gallery">
 
-                          <select name="select-gallery" id="select-gallery">
-
-                            <?php $l = 1 ?>
-                            <?php foreach( $posts as $post): ?>
+                            <?php $l = 1; foreach( $posts as $post): ?>
                               <?php setup_postdata($post); ?>
-
-                              <option value="gallery<?php echo $l; ?>"><?php the_title(); ?></option>
-                             <?php $l++; ?>
-                            <?php endforeach; ?>
-
-
+                                <option value="<?php echo $l; ?>"><?php the_title(); ?></option>
+                              <?php $l++; endforeach; ?>
                             <?php wp_reset_postdata(); ?>
                           </select>
+
                         <?php endif; ?>
 
                     </div><!-- end block-tittle -->
-                    <?php $posts = get_field('gallery', $post_id);
 
-                    if( $posts ): ?>
 
+                    <?php $posts = get_field('gallery', $post_id); if( $posts ): ?>
                       <div class="section-body">
 
-                        <?php $j = 1; ?>
-                        <?php foreach( $posts as $post): ?>
+                        <?php $j = 1; foreach( $posts as $post): ?>
                           <?php setup_postdata($post); ?>
 
-                          <?php if ($j == 1){
-                            $active_class3 = ' active';
-                          } ?>
+                          <?php if ($j == 1) {
+                            $active_class3 = 'active';
+                          } else {
+                            $active_class3 = '';
+                          }?>
 
-                          <div class="kindergarten-gallery <?php //echo $active_class3; ?> kindergarten-gallery<?php echo $j; ?> arrows-orange">
+                          <div data-slide="<?php echo $j; ?>" class="kindergarten-gallery kindergarten-gallery-<?php echo $post_id; ?>-<?php echo $j; ?>  kindergarten-gallery<?php echo $j; ?> arrows-orange" data-slide="<?php echo $j; ?>">
 
-                            <?php $images = get_field('single_gallery');
-                              if( $images ): ?>
+                            <?php $images = get_field('single_gallery'); if( $images ): ?>
 
                                 <?php foreach( $images as $image ): ?>
                                   <div class="kindergarten-gallery__block">
@@ -304,19 +312,42 @@
                                   </div><!-- end kindergarten-gallery__block -->
                                 <?php endforeach; ?>
 
-                              <?php endif; ?>
+                            <?php endif; ?>
 
                           </div><!-- end kindergarten-gallery -->
-                        <?php $j++; ?>
-                        <?php endforeach; ?>
 
+                        <?php $j++; endforeach; ?>
                         <?php wp_reset_postdata(); ?>
+
                       </div><!-- end section-body -->
                     <?php endif; ?>
 
                   </div>
                 </div>
               </section><!-- end kindergarten-gallery-wrap -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
               <section class="kindergarten-video-wrap">
                 <div class="container">
@@ -374,8 +405,7 @@
               <?php wp_reset_postdata(); ?>
             <?php endif; ?>
           </div><!-- end kindergarten-slider -->
-        </div>
-      </div>
+
     </section><!-- end kindergarten-slider--wrap -->
 
 

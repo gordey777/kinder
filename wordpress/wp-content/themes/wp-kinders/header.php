@@ -23,7 +23,38 @@
 
 </head>
 <body <?php body_class(); ?>>
+<!-- HTML-код модального окна -->
+<div id="myModalBox" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Заголовок модального окна</h4>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        Содержимое модального окна...
+      </div>
+      <!-- Футер модального окна -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Скрипт, вызывающий модальное окно после загрузки страницы -->
+<script>
+$(document).ready(function(){
+
+  $("#my_modal_button").click(function() {
+
+    $("#myModal").modal('show');
+  });
+});
+</script>
       <div class="wrapper">
         <header class="header">
           <div class="container">
@@ -39,23 +70,39 @@
                   </a>
                 <?php } ?>
 
-              </div>
-              <!-- end h-logo -->
+              </div><!-- end h-logo -->
+
+
+
+
+
+
               <div class="col-sm-8 h-contacts">
-                <div class="h-contacts__block">
-                  <p><i class="ic ic-sun"></i><span>ул. Некрасова 31</span></p>
-                  <a href="#" class="link-map">смотреть на карте</a>
-                </div>
-                <!-- end h-contacts__block -->
-                <div class="h-contacts__block h-contacts__block--phone">
-                  <p><i class="ic ic-bell"></i>
-                    <span><small>+375 (29)</small> 506-47-07</span>
-                    <span><small>+375 (29)</small> 730-42-22</span>
-                  </p>
-                </div>
+                <?php if( have_rows('address', 5 ) ): ?>
+                  <?php while ( have_rows('address', 5 ) ) : the_row(); ?>
+                    <div class="h-contacts__block">
+                      <p><i class="ic ic-sun"></i><span><?php the_sub_field('text'); ?></span></p>
+                      <a href="<?php the_sub_field('link'); ?>" class="link-map">смотреть на карте</a>
+                    </div><!-- end h-contacts__block -->
+                  <?php  endwhile; ?>
+                <?php endif; ?>
+
+
+                <?php if( have_rows('phone', 5 ) ): ?>
+
+                  <div class="h-contacts__block h-contacts__block--phone">
+                    <p><i class="ic ic-bell"></i>
+                      <?php while ( have_rows('phone', 5 ) ) : the_row(); ?>
+                        <?php the_sub_field('number'); ?>
+                      <?php  endwhile; ?>
+                    </p>
+                  </div>
+
+                <?php endif; ?>
+
                 <!-- end h-contacts__block -->
                 <div class="h-contacts__block h-contacts__block--call">
-                 <a href="#" class="btn btn-call">Заказать звонок</a>
+                 <a id="my_modal_button" href="#myModal" data-toggle="modal" class="btn btn-call">Заказать звонок</a>
                </div>
                <!-- end h-contacts__block -->
                <div class="clearfix"></div>

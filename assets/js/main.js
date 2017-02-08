@@ -1,100 +1,5 @@
 $(document).ready(function() {
-  //choose gallery
-  chooseGallery();
-  $("#select-gallery").change(function() {
-    chooseGallery();
-  });
 
-  function chooseGallery() {
-    $(".kindergarten-gallery").removeClass("active").hide();
-    if ($('#select-gallery').val() == 'gallery1') {
-      $(".kindergarten-gallery1").addClass("active").fadeIn().slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [{
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
-    } else if ($('#select-gallery').val() == 'gallery2') {
-      $(".kindergarten-gallery2").addClass("active").fadeIn().slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [{
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
-    } else if ($('#select-gallery').val() == 'gallery3') {
-      $(".kindergarten-gallery3").addClass("active").fadeIn().slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [{
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
-    } else if ($('#select-gallery').val() == 'gallery4') {
-      $(".kindergarten-gallery4").addClass("active").fadeIn().slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [{
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
-    } else if ($('#select-gallery').val() == 'gallery5') {
-      $(".kindergarten-gallery5").addClass("active").fadeIn().slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        arrows: true,
-        responsive: [{
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2
-          }
-        }]
-      });
-    }
-  }
-  //end gallery
   //hamburger menu
   $(".hamburger").click(function() {
     $(this).toggleClass("is-active");
@@ -263,25 +168,56 @@ $(document).ready(function() {
       }]
     });
   } else {}
+
+
   //slider kindergarten-gallery
-  if ($(".kindergarten-gallery")) {
-    $('.kindergarten-gallery').slick({
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      arrows: true,
-      responsive: [{
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3
-        }
-      }, {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      }]
-    });
-  } else {}
+
+  var slickargs = {
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3
+      }
+    }, {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2
+      }
+    }]
+  };
+
+  $(".class-select-gallery").change(function() {
+
+    $(".kindergarten-gallery").removeClass("active").hide();
+
+
+
+    var temp = $(this).attr('data-id');
+    var temp2 = $(this).val();
+
+    var temp3 = '.kindergarten-gallery-' + temp + '-' + temp2;
+
+    $(temp3).addClass("active").fadeIn().slick(slickargs);
+
+
+  });
+
+  $('.kindergarten-gallery').each(function(index, el) {
+
+    var dataid = $(this).attr('data-slide');
+
+
+
+    if (dataid == 1) {
+      $(this).addClass("active").fadeIn().slick(slickargs);
+    }
+  });
+
+
+
   /**********end sliders***********/
   //map
   if ($('body').hasClass('kontakty-2')) {
