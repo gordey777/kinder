@@ -128,7 +128,12 @@
 
                   <?php $m = 1; ?>
                   <?php while ( have_rows('comand_group') ) : the_row(); ?>
-                  <h3 class="teachers-tittle"><?php the_sub_field('title'); ?></h3>
+                    <?php if ($m == 2) {
+                        $color_class = 'helpers-tittle';
+                      } else {
+                        $color_class = 'teachers-tittle';
+                        }?>
+                  <h3 class="<?php echo $color_class; ?>"><?php the_sub_field('title'); ?></h3>
                   <div class="clearfix"></div>
 
                     <?php $n = 1; ?>
@@ -252,20 +257,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               <section class="kindergarten-gallery-wrap">
                 <div class="container ">
                   <div class="row">
@@ -325,25 +316,6 @@
                   </div>
                 </div>
               </section><!-- end kindergarten-gallery-wrap -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -160,13 +160,61 @@ function wpeSideNav() {
     )
   );
 }
+// WPE sidebar navigation
+function wpeKGNav() {
+  wp_nav_menu(
+  array(
+    'theme_location'  => 'sidebar-studios-kindg',
+    'menu'            => '',
+    'container'       => 'div',
+    'container_class' => 'menu-{menu slug}-container',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'before'          => '',
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'items_wrap'      => '<ul class="sidebarnav">%3$s</ul>',
+    'depth'           => 0,
+    'walker'          => ''
+    )
+  );
+}
+// WPE sidebar navigation
+function wpeSchoolNav() {
+  wp_nav_menu(
+  array(
+    'theme_location'  => 'sidebar-menu-school',
+    'menu'            => '',
+    'container'       => 'div',
+    'container_class' => 'menu-{menu slug}-container',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'before'          => '',
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'items_wrap'      => '<ul class="sidebarnav">%3$s</ul>',
+    'depth'           => 0,
+    'walker'          => ''
+    )
+  );
+}
 //  Register WPE Navigation
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 function register_html5_menu() {
   register_nav_menus(array(
     'header-menu' => __('Меню в шапке', 'wpeasy'),
     'sidebar-menu' => __('Меню в сайдбар', 'wpeasy'),
-    'footer-menu' => __('Меню в подвал', 'wpeasy')
+    'footer-menu' => __('Меню в подвал', 'wpeasy'),
+    'sidebar-studios-kindg' => __('Меню Студий для сада', 'wpeasy'),
+    'sidebar-menu-school' => __('Меню Студий для Школы', 'wpeasy')
   ));
 }
 //  If Dynamic Sidebar Existsов

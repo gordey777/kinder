@@ -17,20 +17,14 @@
               <h3 class="studios-nav__tittle">ВСЕ СТУДИИ</h3>
               <div class="studios-nav__block">
                 <h3>СТУДИИ ДЛЯ САДА:</h3>
-                <ul>
-                  <li><a href="#" class="lato-i">- Почемучки</a></li>
-                  <li><a href="#" class="lato-i">- Светлячки</a></li>
-                  <li><a href="#" class="lato-i">- Непоседы</a></li>
-                </ul>
+                  <?php wpeKGNav() ?>
+
+
               </div>
               <!-- end studios-nav__block -->
               <div class="studios-nav__block">
                 <h3>СТУДИИ ДЛЯ ШКОЛЫ:</h3>
-                <ul>
-                  <li><a href="#" class="lato-i">- Почемучки</a></li>
-                  <li><a href="#" class="lato-i">- Светлячки</a></li>
-                  <li><a href="#" class="lato-i">- Непоседы</a></li>
-                </ul>
+                <?php wpeSchoolNav() ?>
               </div><!-- end studios-nav__block -->
             </div>
           </div>
