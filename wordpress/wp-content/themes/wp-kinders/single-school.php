@@ -15,7 +15,7 @@
       </div>
     </section><!-- end section.kindergarten -->
 
-<section class="kindergarten-slider-nav--wrapper">
+    <section class="kindergarten-slider-nav--wrapper">
 
       <div class="container">
         <div class="row">
@@ -61,10 +61,12 @@
                   <?php while ( have_rows('comand_group') ) : the_row(); ?>
                     <?php $k = 1; ?>
                     <?php while(has_sub_field('personal_card')): ?>
-                      <?php if ($k == 1){
-                        $active_class = ' in active';
-                      } ?>
-                      <div class="tab-pane fade <?php //echo $active_class; ?>" id="band<?php echo $i; ?>-teacher<?php echo $k; ?>">
+                      <?php if (($i == 1) && ($k == 1)) {
+                        $active_class = 'in active';
+                      } else {
+                        $active_class = '';
+                        }?>
+                      <div class="tab-pane fade <?php echo $active_class; ?>" id="band<?php echo $i; ?>-teacher<?php echo $k; ?>">
                         <div class="band-teacher__top">
                           <div class="band-teacher__img">
 
@@ -110,11 +112,14 @@
 
                     <?php $n = 1; ?>
                     <?php while(has_sub_field('personal_card')): ?>
-                      <?php if ($n == 1){
-                        $active_class2 = 'active';
-                      } ?>
 
-                  <li class="<?php //echo $active_class2; ?>">
+                      <?php if (($n == 1) && ($m == 1)) {
+                        $active_class2 = 'active';
+                      } else {
+                        $active_class2 = '';
+                        }?>
+
+                  <li class="<?php echo $active_class2; ?>">
                     <a href="#band<?php echo $m; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
                             <?php $image = get_sub_field('sub_img');
                             if( !empty($image) ): ?>
@@ -124,8 +129,8 @@
                       <p><?php the_sub_field('sub_name'); ?></p>
                     </a>
                   </li>
+                  <?php $n++; ?>
 
-                        <?php $n++; ?>
                       <?php endwhile; ?>
 <div class="clearfix"></div>
                       <?php $m++; ?>
@@ -260,7 +265,7 @@
                         <?php $j = 1; ?>
                         <?php foreach( $posts as $post): ?>
                           <?php setup_postdata($post); ?>
-                          <?php $post_id = get_the_ID(); ?>
+
                           <?php if ($j == 1){
                             $active_class3 = 'active';
                           } ?>

@@ -1,3 +1,5 @@
+@charset 'UTF-8';
+
 /*________1 parents-club page______*/
 
 .parents-club {
@@ -696,10 +698,10 @@ section.kindergarten {
     background-size: cover;
   }
   .slick-prev::before {
-    content: '╨Ь╨Ы╨Р╨Ф╨и╨Х';
+    content: 'МЛАДШЕ';
   }
   .slick-next::before {
-    content: '╨б╤В╨░╤А╤И╨╡';
+    content: 'Старше';
   }
 }
 

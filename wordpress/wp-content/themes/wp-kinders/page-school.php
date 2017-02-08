@@ -65,7 +65,7 @@
             if( $posts ): ?>
               <?php foreach( $posts as $post): ?>
                 <?php setup_postdata($post); ?>
-
+                          <?php $post_id = get_the_ID(); ?>
             <div class="kindergarten-slider__block">
 
             <?php if( have_rows('comand_group') ): ?>
@@ -78,10 +78,16 @@
                   <?php while ( have_rows('comand_group') ) : the_row(); ?>
                     <?php $k = 1; ?>
                     <?php while(has_sub_field('personal_card')): ?>
-                      <?php if ($k == 1){
-                        $active_class = ' in active';
-                      } ?>
-                      <div class="tab-pane fade <?php //echo $active_class; ?>" id="band<?php echo $i; ?>-teacher<?php echo $k; ?>">
+
+
+                      <?php if (($i == 1) && ($k == 1)) {
+                        $active_class = 'in active';
+                      } else {
+                        $active_class = '';
+                        }?>
+
+
+                      <div class="tab-pane fade <?php echo $active_class; ?>" id="band<?php echo $post_id; ?>-teacher<?php echo $k; ?>">
                         <div class="band-teacher__top">
                           <div class="band-teacher__img">
 
@@ -127,12 +133,15 @@
 
                     <?php $n = 1; ?>
                     <?php while(has_sub_field('personal_card')): ?>
-                      <?php if ($n == 1){
-                        $active_class2 = 'active';
-                      } ?>
 
-                  <li class="<?php //echo $active_class2; ?>">
-                    <a href="#band<?php echo $m; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
+                      <?php if (($n == 1) && ($m == 1)) {
+                        $active_class2 = 'active';
+                      } else {
+                        $active_class2 = '';
+                        }?>
+
+                  <li class="<?php echo $active_class2; ?>">
+                    <a href="#band<?php echo $post_id; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
                             <?php $image = get_sub_field('sub_img');
                             if( !empty($image) ): ?>
                               <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -141,8 +150,8 @@
                       <p><?php the_sub_field('sub_name'); ?></p>
                     </a>
                   </li>
+                  <?php $n++; ?>
 
-                        <?php $n++; ?>
                       <?php endwhile; ?>
 <div class="clearfix"></div>
                       <?php $m++; ?>
@@ -176,7 +185,7 @@
                     <div class="section-body">
                       <div class="kindergarten-studios">
 
-                      <?php $posts = get_field('studios');
+                      <?php $posts = get_field('studios', $post_id);
 
                         if( $posts ): ?>
 
@@ -248,7 +257,7 @@
                         <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
                       </h2>
 
-                      <?php $posts = get_field('gallery');
+                      <?php $posts = get_field('gallery', $post_id);
 
                         if( $posts ): ?>
 
@@ -268,7 +277,7 @@
                         <?php endif; ?>
 
                     </div><!-- end block-tittle -->
-                    <?php $posts = get_field('gallery');
+                    <?php $posts = get_field('gallery', $post_id);
 
                     if( $posts ): ?>
 
@@ -277,12 +286,12 @@
                         <?php $j = 1; ?>
                         <?php foreach( $posts as $post): ?>
                           <?php setup_postdata($post); ?>
-                          <?php $post_id = get_the_ID(); ?>
+
                           <?php if ($j == 1){
-                            $active_class3 = 'active';
+                            $active_class3 = ' active';
                           } ?>
 
-                          <div class="kindergarten-gallery <?php echo $active_class3; ?> kindergarten-gallery<?php echo $j; ?> arrows-orange">
+                          <div class="kindergarten-gallery <?php //echo $active_class3; ?> kindergarten-gallery<?php echo $j; ?> arrows-orange">
 
                             <?php $images = get_field('single_gallery');
                               if( $images ): ?>
@@ -322,7 +331,7 @@
 
                       <div class="kindergarten-video arrows-orange">
 
-                        <?php $posts = get_field('videos');
+                        <?php $posts = get_field('videos', $post_id);
 
                         if( $posts ): ?>
                           <?php foreach( $posts as $post): ?>
