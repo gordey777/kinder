@@ -1,5 +1,26 @@
 <?php /* Template Name: Sad School */ get_header(); ?>
     </header>
+    <div id="morepricingModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- Заголовок модального окна -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">ПОДРОБНЕЕ О ЦЕНАХ</h4>
+          </div>
+          <!-- Основное содержимое модального окна -->
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+
+                <?php echo do_shortcode( '[contact-form-7 id="467" title="ПОДРОБНЕЕ О ЦЕНАХ"]' ); ?>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
@@ -145,20 +166,20 @@
                         $active_class2 = '';
                         }?>
 
-                  <li class="<?php echo $active_class2; ?>">
-                    <a href="#band<?php echo $post_id; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
-                            <?php $image = get_sub_field('sub_img');
-                            if( !empty($image) ): ?>
-                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-                            <?php endif; ?>
+                        <li class="<?php echo $active_class2; ?>">
+                          <a href="#band<?php echo $post_id; ?>-teacher<?php echo $n; ?>" data-toggle="tab">
+                                  <?php $image = get_sub_field('sub_img');
+                                  if( !empty($image) ): ?>
+                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                                  <?php endif; ?>
 
-                      <p><?php the_sub_field('sub_name'); ?></p>
-                    </a>
-                  </li>
-                  <?php $n++; ?>
+                            <p><?php the_sub_field('sub_name'); ?></p>
+                          </a>
+                        </li>
+                        <?php $n++; ?>
 
                       <?php endwhile; ?>
-<div class="clearfix"></div>
+                        <div class="clearfix"></div>
                       <?php $m++; ?>
                     <?php  endwhile; ?>
                 </ul>
@@ -169,11 +190,123 @@
               </div><!-- end kindergarten-slider__block--right -->
         </div>
       </div>
+      <div class="clearfix"></div>
+
+
+      <section class="kindergarten-shedule">
+        <div class="container">
+          <div class="row">
+            <div class="section-body">
+
+              <?php if( have_rows('routine') ): ?>
+
+                <div class="col-md-6 kindergarten-shedule-left">
+                  <div class="kindergarten-shedule-left__inner">
+                    <div class="block-tittle block-tittle--lg">
+                      <h2>РАСПОРЯДОК ДНЯ
+                        <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                      </h2>
+                    </div><!-- end block-tittle -->
+
+                      <?php while ( have_rows('routine') ) : the_row(); ?>
+                        <div class="kindergarten-shedule-left__block">
+                            <?php $image = get_sub_field('img');
+                            if( !empty($image) ): ?>
+                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <?php endif; ?>
+                          <h3><?php the_sub_field('title'); ?></h3>
+                          <p class="lato-i"><?php the_sub_field('text'); ?></p>
+                        </div><!-- end kindergarten-shedule-left__block -->
+                      <?php  endwhile; ?>
+
+                    </div>
+                  </div><!-- end kindergarten-shedule-left -->
+                <?php endif; ?>
+
+                <?php if( have_rows('schedule') ): ?>
+                  <div class="col-md-6 kindergarten-shedule-right">
+                    <div class="kindergarten-shedule-right__inner">
+                      <div class="block-tittle block-tittle--lg">
+                        <h2>РАСПИСАНИЕ ЗАНЯТИЙ
+                          <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                        </h2>
+                      </div><!-- end block-tittle -->
+
+                      <?php while ( have_rows('schedule') ) : the_row(); ?>
+
+                        <div class="kindergarten-shedule-right__block">
+                          <h2><?php the_sub_field('time'); ?></h2>
+                          <p class="lato-i"><?php the_sub_field('text'); ?></p>
+                        </div><!-- end kindergarten-shedule-right__block -->
+
+                      <?php  endwhile; ?>
+
+                    </div>
+                  </div><!-- end kindergarten-shedule-right -->
+
+                <?php endif; ?>
               <div class="clearfix"></div>
+            </div><!-- end section-body -->
+          </div>
+        </div>
+      </section><!-- end kindergarten-shedule -->
 
-<?php the_content(); ?>
+<?php if( have_rows('additional') ): ?>
 
- <div class="clearfix"></div>
+        <section class="kindergarten-longer">
+          <div class="container">
+            <div class="row">
+              <div class="section-tittle">
+                <i class="ic ic-bell_lg"></i>
+                <h1>ПРОДЛЕНКА
+                  <div class="section-tittle__decoration"><span></span></div>
+                  <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                </h1>
+              </div><!-- end section-tittle -->
+
+
+              <div class="section-body">
+                <?php while ( have_rows('additional') ) : the_row(); ?>
+                  <div class="col-md-6">
+                    <p class="lato-i"><?php the_sub_field('text'); ?></p>
+                  </div>
+
+                  <div class="col-md-6">
+                    <?php $i_arrow = 1; ?>
+
+                    <?php while(has_sub_field('right_block')): ?>
+
+                        <?php if ($i_arrow == 1) {
+                          $arrow_block = '<i class="ic ic-arrow_blue"></i>';
+                        } elseif ($i_arrow == 2) {
+                          $arrow_block = '<i class="ic ic-arrow_blue rotate"></i>';
+                        } else {
+                          $arrow_block = '';
+                        }?>
+
+                      <div class="kindergarten-longer__block">
+                        <h1><?php the_sub_field('sub_time'); ?></h1>
+                        <p class="lato-i"><?php the_sub_field('sub_text'); ?></p>
+                        <?php echo $arrow_block; ?>
+                      </div><!-- end kindergarten-longer__block -->
+
+                      <?php $i_arrow++; ?>
+
+                    <?php endwhile; ?>
+
+
+                    <div class="clearfix"></div>
+                  </div>
+                <?php  endwhile; ?>
+
+                <div class="clearfix"></div>
+              </div>
+              <!-- end section-body -->
+            </div>
+          </div>
+        </section><!-- end kindergarten-longer -->
+      <?php endif; ?>
+
 
               <section class="kindergarten-studios">
                 <div class="container">
@@ -241,9 +374,9 @@
                       </div>
                       <div class="col-md-4">
                         <div class="btn-more-wrap">
-                          <a href="#" class="btn btn-more">
+                          <a id="morepricing_modal_button" href="#morepricingModal" data-toggle="modal" class="btn btn-more">
                             <i class="ic ic-bee"></i>
-                            ПОДРОБНЕЕ О ЦЕНАХ
+                             ПОДРОБНЕЕ О ЦЕНАХ
                             <i class="ic ic-bee"></i>
                           </a>
                         </div>

@@ -26,6 +26,30 @@
     </header>
 
     <?php if( have_rows('direction', 5 ) ): ?>
+
+    <!-- BOOTSTRAP MODAL -->
+    <div id="enrollModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- Заголовок модального окна -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">ЗАПИСАТЬСЯ СЕЙЧАС</h4>
+          </div>
+          <!-- Основное содержимое модального окна -->
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+
+                <?php echo do_shortcode( '[contact-form-7 id="466" title="ЗАПИСАТЬСЯ СЕЙЧАС"]' ); ?>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
       <section class="directions">
         <div class="container">
           <div class="row">
@@ -72,7 +96,7 @@
 
                         </ul>
 
-                        <a href="<?php the_sub_field('link_get'); ?>" class="btn btn-solid directions__block-btn">
+                        <a id="enroll_modal_button" href="#enrollModal" data-toggle="modal" class="btn btn-solid directions__block-btn">
                           ЗАПИСАТЬСЯ СЕЙЧАС
                         </a>
 

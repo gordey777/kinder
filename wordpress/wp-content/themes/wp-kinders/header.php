@@ -24,37 +24,29 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- HTML-код модального окна -->
-<div id="myModalBox" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Заголовок модального окна -->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Заголовок модального окна</h4>
-      </div>
-      <!-- Основное содержимое модального окна -->
-      <div class="modal-body">
-        Содержимое модального окна...
-      </div>
-      <!-- Футер модального окна -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+    <div id="callbackModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- Заголовок модального окна -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title">Заказать звонок</h4>
+          </div>
+          <!-- Основное содержимое модального окна -->
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+
+                <?php echo do_shortcode( '[contact-form-7 id="465" title="Заказать звонок"]' ); ?>
+
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Скрипт, вызывающий модальное окно после загрузки страницы -->
-<script>
-$(document).ready(function(){
 
-  $("#my_modal_button").click(function() {
-
-    $("#myModal").modal('show');
-  });
-});
-</script>
       <div class="wrapper">
         <header class="header">
           <div class="container">
@@ -71,10 +63,6 @@ $(document).ready(function(){
                 <?php } ?>
 
               </div><!-- end h-logo -->
-
-
-
-
 
 
               <div class="col-sm-8 h-contacts">
@@ -102,7 +90,7 @@ $(document).ready(function(){
 
                 <!-- end h-contacts__block -->
                 <div class="h-contacts__block h-contacts__block--call">
-                 <a id="my_modal_button" href="#myModal" data-toggle="modal" class="btn btn-call">Заказать звонок</a>
+                 <div id="callback_modal_button" data-target="#callbackModal" data-toggle="modal" class="btn btn-call">Заказать звонок</div>
                </div>
                <!-- end h-contacts__block -->
                <div class="clearfix"></div>

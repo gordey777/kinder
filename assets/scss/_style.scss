@@ -1,3 +1,4 @@
+@charset 'UTF-8';
 @font-face {
   font-family: 'NeuchaRegular';
   font-weight: normal;
@@ -829,22 +830,30 @@ i {
     &.menu-item-has-children {
       position: relative;
       &:after {
+        font-family: FontAwesome;
         font-size: 22px;
 
         position: absolute;
         z-index: 1;
-        top: 50%;
-        right: -5px;
+        right: 2px;
+        bottom: 45%;
 
         display: block;
 
-        width: 10px;
+        width: 15px;
         height: 10px;
-        //content: '\f107';
 
-        content: '+';
+        content: '\f107';
+        transition: .3s;
 
         color: #fff;
+      }
+    }
+    &:hover {
+      &.menu-item-has-children {
+        &:after {
+          bottom: 25%;
+        }
       }
     }
     &:hover,
@@ -903,8 +912,10 @@ i {
 
         background: #fa8f00;
         a {
+          //font-size: 23px;
+
           width: 100%;
-          padding: 16px 25.6px 16px 45.6px;
+          padding: 10px 25.6px 10px 45.6px;
 
           text-transform: none;
 

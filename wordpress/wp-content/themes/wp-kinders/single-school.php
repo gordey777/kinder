@@ -146,9 +146,120 @@
       </div>
               <div class="clearfix"></div>
 
-<?php the_content(); ?>
+      <section class="kindergarten-shedule">
+        <div class="container">
+          <div class="row">
+            <div class="section-body">
 
- <div class="clearfix"></div>
+              <?php if( have_rows('routine') ): ?>
+
+                <div class="col-md-6 kindergarten-shedule-left">
+                  <div class="kindergarten-shedule-left__inner">
+                    <div class="block-tittle block-tittle--lg">
+                      <h2>РАСПОРЯДОК ДНЯ
+                        <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                      </h2>
+                    </div><!-- end block-tittle -->
+
+                      <?php while ( have_rows('routine') ) : the_row(); ?>
+                        <div class="kindergarten-shedule-left__block">
+                            <?php $image = get_sub_field('img');
+                            if( !empty($image) ): ?>
+                              <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <?php endif; ?>
+                          <h3><?php the_sub_field('title'); ?></h3>
+                          <p class="lato-i"><?php the_sub_field('text'); ?></p>
+                        </div><!-- end kindergarten-shedule-left__block -->
+                      <?php  endwhile; ?>
+
+                    </div>
+                  </div><!-- end kindergarten-shedule-left -->
+                <?php endif; ?>
+
+                <?php if( have_rows('schedule') ): ?>
+                  <div class="col-md-6 kindergarten-shedule-right">
+                    <div class="kindergarten-shedule-right__inner">
+                      <div class="block-tittle block-tittle--lg">
+                        <h2>РАСПИСАНИЕ ЗАНЯТИЙ
+                          <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                        </h2>
+                      </div><!-- end block-tittle -->
+
+                      <?php while ( have_rows('schedule') ) : the_row(); ?>
+
+                        <div class="kindergarten-shedule-right__block">
+                          <h2><?php the_sub_field('time'); ?></h2>
+                          <p class="lato-i"><?php the_sub_field('text'); ?></p>
+                        </div><!-- end kindergarten-shedule-right__block -->
+
+                      <?php  endwhile; ?>
+
+                    </div>
+                  </div><!-- end kindergarten-shedule-right -->
+
+                <?php endif; ?>
+              <div class="clearfix"></div>
+            </div><!-- end section-body -->
+          </div>
+        </div>
+      </section><!-- end kindergarten-shedule -->
+
+
+      <?php if( have_rows('additional') ): ?>
+
+        <section class="kindergarten-longer">
+          <div class="container">
+            <div class="row">
+              <div class="section-tittle">
+                <i class="ic ic-bell_lg"></i>
+                <h1>ПРОДЛЕНКА
+                  <div class="section-tittle__decoration"><span></span></div>
+                  <div class="section-tittle__decoration section-tittle__decoration--right"><span></span></div>
+                </h1>
+              </div><!-- end section-tittle -->
+
+
+              <div class="section-body">
+                <?php while ( have_rows('additional') ) : the_row(); ?>
+                  <div class="col-md-6">
+                    <p class="lato-i"><?php the_sub_field('text'); ?></p>
+                  </div>
+
+                  <div class="col-md-6">
+                    <?php $i_arrow = 1; ?>
+
+                    <?php while(has_sub_field('right_block')): ?>
+
+                        <?php if ($i_arrow == 1) {
+                          $arrow_block = '<i class="ic ic-arrow_blue"></i>';
+                        } elseif ($i_arrow == 2) {
+                          $arrow_block = '<i class="ic ic-arrow_blue rotate"></i>';
+                        } else {
+                          $arrow_block = '';
+                        }?>
+
+                      <div class="kindergarten-longer__block">
+                        <h1><?php the_sub_field('sub_time'); ?></h1>
+                        <p class="lato-i"><?php the_sub_field('sub_text'); ?></p>
+                        <?php echo $arrow_block; ?>
+                      </div><!-- end kindergarten-longer__block -->
+
+                      <?php $i_arrow++; ?>
+
+                    <?php endwhile; ?>
+
+
+                    <div class="clearfix"></div>
+                  </div>
+                <?php  endwhile; ?>
+
+                <div class="clearfix"></div>
+              </div>
+              <!-- end section-body -->
+            </div>
+          </div>
+        </section><!-- end kindergarten-longer -->
+      <?php endif; ?>
 
               <section class="kindergarten-studios">
                 <div class="container">

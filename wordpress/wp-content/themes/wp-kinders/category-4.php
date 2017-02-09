@@ -48,11 +48,22 @@
                             the_post_thumbnail('medium');
                           else: ?>
 
-                            <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>"/>
+                            <?php
+                            $images = get_field('single_gallery');
+                            $image  = $images[0];
+
+                            if( $image ) :  ?>
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                            <?php endif; ?>
+
                           <?php endif; ?>
                       </div>
                         <span class="gallery-name"><?php the_title(); ?></span>
-                        <span class="sum-photo">фото</span>
+                            <?php
+                            $images = get_field('single_gallery');
+                            $gallery_count  = count($images); ?>
+
+                        <span class="sum-photo"><?php echo $gallery_count; ?> фото</span>
                       </div>
                       <?php wpeExcerpt('wpeExcerpt40'); ?>
                     </a>
@@ -81,23 +92,6 @@
         </div>
       </div>
     </section>
-
-<script>
-      //TABS on category-4.php
-    $(function() {
-      var tabContainers = $('div.galery_tabs > div');
-      tabContainers.hide().filter(':first').show();
-
-      $('div.galery_buttons a.tab-link').click(function() {
-        tabContainers.hide();
-        tabContainers.filter(this.hash).show();
-        $('div.galery_buttons a.tab-link').removeClass('active-tab');
-        $(this).addClass('active-tab');
-        return false;
-      }).filter(':first').click();
-    });
-</script>
-
 
 
     <footer>
